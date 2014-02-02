@@ -1,8 +1,4 @@
 
-
-
-
-  
 //#include "stdafx.h"
 //#include <conio.h>
 #include <fstream>
@@ -11,32 +7,31 @@
 #include <string>
 using namespace std;
 
-    
-    class Animals
+
+class Animals
+{
+private:
+    string food;
+public:
+    void eat()
     {
-      
-    public:
-        string iSay;
-        string food;
-        void eat()
-        {
-            iSay = "As the animal I am, I usually eat ";
-        }
-        void set_food(string f)
-        {
-            food = f;
-        }
-        
-    };
+        cout << "As the animal I am, I usually eat " << food << endl;
+    }
+    void set_food(string f)
+    {
+        food = f;
+    }
     
+};
+
 class Reptiles: public Animals
+{
+    string eat()
     {
-        void eat()
-        {
-            cout << iSay << food << endl;
-        }
-        
-    };
+        return "flies";
+    }
+    
+};
 
 
 int main(int argc, const char * argv[])
@@ -45,14 +40,12 @@ int main(int argc, const char * argv[])
     Reptiles reptile;
     Animals animal;
     
-    reptile.set_food("flies");
-    reptile.Animals::eat();
-    
+    animal.set_food("flies");
+    animal.eat();
     
     
     //_getch();
     system("Pause");
     return 0;
 }
-
 
