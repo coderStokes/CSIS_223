@@ -14,12 +14,13 @@ using namespace std;
     
     class Animals
     {
-    private:
-        string food;
+      
     public:
+        string iSay;
+        string food;
         void eat()
         {
-            cout << "As the animal I am, I usually eat " << food << endl;
+            iSay = "As the animal I am, I usually eat ";
         }
         void set_food(string f)
         {
@@ -30,9 +31,9 @@ using namespace std;
     
 class Reptiles: public Animals
     {
-        string eat()
+        void eat()
         {
-            return "flies";
+            cout << iSay << food << endl;
         }
         
     };
@@ -45,7 +46,8 @@ int main(int argc, const char * argv[])
     Animals animal;
     
     reptile.set_food("flies");
-    animal.eat();
+    reptile.Animals::eat();
+    
     
     
     //_getch();
